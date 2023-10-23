@@ -1,0 +1,15 @@
+FROM node:20-alpine
+
+WORKDIR /app/client
+
+COPY package*.json .
+# COPY vite.config.js .
+
+RUN npm install
+
+# COPY . /app/client/
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npm","run", "dev-exposed"]
